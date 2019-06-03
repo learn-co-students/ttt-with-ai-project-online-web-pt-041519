@@ -12,11 +12,13 @@ class Board
     end
 
     def display
+        puts ""
         puts " #{self.cells[0]} | #{self.cells[1]} | #{self.cells[2]} "
         puts "-----------"
         puts " #{self.cells[3]} | #{self.cells[4]} | #{self.cells[5]} "
         puts "-----------"
         puts " #{self.cells[6]} | #{self.cells[7]} | #{self.cells[8]} "
+        puts ""
     end
 
     def position(input)
@@ -32,7 +34,7 @@ class Board
     end
 
     def taken?(input)
-        position(input) == " " ? false : true
+        position(input) != " "
     end
 
     def valid_move?(input)
@@ -40,6 +42,6 @@ class Board
     end
 
     def update(input, player)
-        self.cells[input.to_i-1] = player.token if valid_move?(input)
+        self.cells[input.to_i-1] = player.token
     end
 end

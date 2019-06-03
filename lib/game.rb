@@ -44,7 +44,8 @@ class Game
     end
 
     def turn
-        move = self.current_player.move(board)
+        self.board.display
+        self.current_player.move(board)
     end
 
     def play
