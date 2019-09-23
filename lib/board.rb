@@ -50,4 +50,6 @@ class Board
   def update
   end
 
+  def test
+  end  
 end
