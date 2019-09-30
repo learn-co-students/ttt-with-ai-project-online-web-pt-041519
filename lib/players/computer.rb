@@ -1,5 +1,5 @@
 class Players 
-    class Computer < Player 
+    class Players::Computer < Player 
         def move(board)
             #should return a valid position. Any valid position?
             board.cells.each_with_index do |cell, index|
