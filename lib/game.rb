@@ -25,7 +25,21 @@ class Game
     @board.turn_count.even? ? (return @player_1) : (return @player_2)
   end
 
+  # Return winning array if @board.cells indices match WIN_COMBINATIONS; otherwise return false
   def won?
+    # Build hash of x and o indices
+    indices_hash = {}
+    @board.cells.each_with_index.reduce(0) do |memo, (value, index)|
+      indices_hash[value] ||= []
+      indices_hash[value] << index
+      indices_hash
+    end
+
+    # Return array if intersection of winnning combo and X or O array matches a winning combo
+    WIN_COMBINATIONS.each { |combo| return combo if combo & indices_hash["X"] == combo || combo & indices_hash["O"] == combo }
+
+    # Otherwise return false
+    return false 
   end
 
   def draw?
