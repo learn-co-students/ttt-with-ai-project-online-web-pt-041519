@@ -2,4 +2,11 @@
 
 require_relative '../config/environment'
 
+# Great user
+puts "Hi friend! Welcome to Tic Tac Toe with AI.\n\n"
 
+# Start game
+Game.new.start
+
+# Prompt user to play again
+Game.new.play_again?

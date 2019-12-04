@@ -3,7 +3,7 @@ class Board
 
   # Make 9 cell empty board
   def initialize
-    @cells = Array.new(9, " ")
+    reset!
   end
 
   # Clear cells array
